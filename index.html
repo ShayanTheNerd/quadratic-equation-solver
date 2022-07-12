@@ -1,1 +1,112 @@
-<!-- npx tailwindcss -i tw_input.css -o tw_output.min.css --watch --><!DOCTYPE html><html lang="en" dir="ltr"><head> <title>Quadratic Equation Solver</title> <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="keywords" content="quadratic equation solver, equations, math"> <meta name="description" content="A simple quadratic equation solver by Shayan Zamani"> <meta name="author" content="Shayan Zamani"> <link rel="shortcut icon" href="math.svg" type="image/x-icon"> <link rel="stylesheet" href="tw_output.min.css"></head><body class="bg-slate-400 flex justify-center items-center w-screen h-screen"> <section class="flex flex-col justify-evenly items-center space-y-7 -mt-10 lg:-mt-5"> <h1 class="text-2xl font-extrabold text-slate-800 lg:text-3xl"> Quadratic Equation Solver </h1> <div class="px-3 py-5 m-3 shadow-2xl rounded-lg overflow-hidden bg-gray-200 md:p-8 lg:m-0"> <!-- title start --> <p class="text-center mx-auto text-slate-500 text-xl mb-8 leading-relaxed lg:font-semibold"> Enter your quadratic equation <br> ( y = ax<sup>2</sup> + bx + c ) </p> <!-- title end --> <!-- sentence inputs start --> <div class="w-full flex justify-between items-center text-xl md:space-x-0.5 lg:space-x-1"> <input type="number" id="a" placeholder="a" required class="placeholder:text-gray-500 placeholder:font-bold placeholder:text-2xl h-12 w-[70px] text-xl font-medium rounded bg-white text-center"> <span class="font-bold"> X<sup>2</sup> + </span> <input type="number" id="b" placeholder="b" required class="placeholder:text-gray-500 placeholder:font-bold placeholder:text-2xl h-12 w-[70px] text-xl font-medium rounded bg-white text-center"> <span class="font-bold"> X + </span> <input type="number" id="c" placeholder="c" required class="placeholder:text-gray-500 placeholder:font-bold placeholder:text-2xl h-12 w-[70px] text-xl font-medium rounded bg-white text-center"> <span class="font-bold"> = 0 </span> </div> <!-- sentence inputs end --> <!-- buttons start --> <div class="w-full flex justify-around items-center text-lg text-white my-7"> <button type="button" onclick="clearAll()" class="px-4 py-2.5 shadow border rounded bg-red-600 hover:bg-red-700 duration-200 focus:ring-2 focus:ring-red-500 focus:ring-offset-1"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /> </svg> </button> <button type="button" id="calc" onclick="checkCalc()" class="px-5 py-2 shadow border rounded bg-sky-500 hover:bg-sky-600 duration-200 focus:ring-2 focus:ring-sky-400 focus:ring-offset-1"> <span>Calculate</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /> </svg> </button> </div> <!-- buttons end --> <!-- result start --> <div> <p id="result" class="text-center text-2xl border shadow-inner bg-white rounded h-16 flex justify-center items-center lg:font-semibold"> x = ? </p> </div> <!-- result end --> </div> <small class="text-base lg:text-[18px]"> © Copyright 2022 | Created by <a href="https://shayan-84.github.io/shayan-zamani/" target="_blank" rel="noreferrer noopener" title="Click to visit website" class="underline text-blue-700 hover:text-blue-800 duration-200 visited:text-purple-900 font-semibold"> Shayan Zamani </a> </small> </section> <script src="custom_scripts.min.js"></script></body></html>
+<!-- Run the code below in the integrated Terminal to edit Tailwind CSS classes -->
+<!-- npx tailwindcss -i tw_input.css -o tw_output.css --watch -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>Quadratic Equation Solver</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="quadratic equation solver, math quadratic equations">
+    <meta name="description"
+        content="Quadratic Equation Solver is an SPW created with HTML, CSS, Tailwind CSS, and JavaScript to help you solve basic quadratic equations">
+    <meta name="author" content="Shayan Zamani">
+    <link rel="shortcut icon" href="math.svg" type="image/x-icon">
+    <link rel="stylesheet" href="tw_output.css">
+</head>
+
+<body class="bg-slate-400 flex justify-center items-center w-screen h-screen">
+    <main
+        class="flex flex-col justify-evenly items-center space-y-7 -mt-10 lg:-mt-5">
+        <!-- Page title -->
+        <h1 class="text-2xl font-extrabold text-slate-800 lg:text-3xl">
+            Quadratic Equation Solver
+        </h1>
+
+        <section
+            class="px-3 py-5 m-3 shadow-2xl rounded-lg overflow-hidden bg-gray-200 md:p-8 lg:m-0">
+            <!-- Box title -->
+            <p
+                class="text-center mx-auto text-slate-500 text-xl mb-8 leading-relaxed lg:font-semibold">
+                Enter your quadratic equation
+                <br>
+                ( y = ax<sup>2</sup> + bx + c )
+            </p>
+
+            <!-- Inputs -->
+            <div
+                class="w-full flex justify-between items-center text-xl md:space-x-0.5 lg:space-x-1">
+                <input type="number" id="a" placeholder="a" required
+                    class="placeholder:text-gray-500 placeholder:font-bold placeholder:text-2xl h-12 w-[70px] text-xl font-medium rounded bg-white text-center">
+                <span class="font-bold">
+                    X<sup>2</sup> +
+                </span>
+                <input type="number" id="b" placeholder="b" required
+                    class="placeholder:text-gray-500 placeholder:font-bold placeholder:text-2xl h-12 w-[70px] text-xl font-medium rounded bg-white text-center">
+                <span class="font-bold">
+                    X +
+                </span>
+                <input type="number" id="c" placeholder="c" required
+                    class="placeholder:text-gray-500 placeholder:font-bold placeholder:text-2xl h-12 w-[70px] text-xl font-medium rounded bg-white text-center">
+                <span class="font-bold">
+                    = 0
+                </span>
+            </div>
+
+            <!-- Buttons -->
+            <div
+                class="w-full flex justify-around items-center text-lg text-white my-7">
+                <button type="button" onclick="clearAll()"
+                    class="px-4 py-2.5 shadow border rounded bg-red-600 duration-200 focus:ring-2 focus:ring-red-500 focus:ring-offset-1 lg:hover:bg-red-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                </button>
+
+                <button type="button" id="calc" onclick="checkCalc()"
+                    class="px-5 py-2 shadow border rounded bg-sky-500 duration-200 focus:ring-2 focus:ring-sky-400 focus:ring-offset-1 lg:hover:bg-sky-600">
+                    <span>Calculate</span>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 inline-block" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Results -->
+            <div>
+                <p id="result"
+                    class="text-center text-2xl border shadow-inner bg-white rounded h-16 flex justify-center items-center lg:font-semibold">
+                    x = ?
+                </p>
+            </div>
+        </section>
+
+        <!-- credits -->
+        <small
+            class="text-base text-center flex flex-col justify-center mt-3 pb-3 sm:flex-row lg:text-lg">
+            <p>
+                © Copyright
+                <span id="yearOfDate" class="mx-0.5">This Year</span>
+                | Created by
+            </p>
+            <a href="https://shayan-zamani.me" target="_blank"
+                rel="noopener noreferrer"
+                class="underline ml-2 text-lg font-semibold text-blue-600 lg:hover:text-blue-700 visited:text-purple-800 duration-150 lg:text-xl">
+                Shayan Zamani
+            </a>
+        </small>
+    </main>
+
+    <script defer src="scripts.js"></script>
+</body>
+
+</html>
