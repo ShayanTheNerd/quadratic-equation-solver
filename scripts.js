@@ -1,15 +1,18 @@
-// declaring all variables
-var a, b, c, delta = 0, x1 = 0, x2 = 0;
+// Declare all variables
+let a, b, c, delta = 0, x1 = 0, x2 = 0;
 
-// triggering calculate button with Enter
-document.onkeydown = function (e) {
-    let keyCode = e.key;
-    if (keyCode == 'Enter') {
+// Trigger calculate button on Enter keydonw
+document.onkeydown = function (event) {
+    if (event.key === 'Enter') {
         checkCalc();
     }
 }
 
-// checking the validity of inputs
+// 'clearall' and 'calc' buttons
+document.getElementById('clearAllBtn').addEventListener('click', clearAll);
+document.getElementById('calc').addEventListener('click', checkCalc);
+
+// Chek the value of inputs
 function checkCalc() {
     a = document.getElementById("a").value;
     b = document.getElementById("b").value;
@@ -19,8 +22,8 @@ function checkCalc() {
         alert("Please declare appropriate values for all variables (a, b, c)!")
     }
     else {
-        if (a == 0) {
-            alert("variable 'a' cannot be declared as '0'");
+        if (+a === 0) {
+            alert("Variable 'a' cannot be declared as '0'");
         }
         else {
             calculate();
@@ -28,31 +31,31 @@ function checkCalc() {
     }
 }
 
-// clearing all inputs and result
+// Clear all inputs and result
 function clearAll() {
-    a = 0, b = 0, c = 0, delta = 0, x1 = 0, x2 = 0;
+    a = b = c = delta = x1 = x2 = 0;
     document.getElementById("a").value = "";
     document.getElementById("b").value = "";
     document.getElementById("c").value = "";
-    document.getElementById("result").innerHTML = "x = ?";
+    document.getElementById("results").textContent = "x = ?";
 }
 
-// calculating Delta(Δ) and the value/values of 'x'
+// Calculate Delta(Δ) and the value/values of 'x'
 function calculate() {
-    // declaring Delta(Δ)
+    // Declare Delta(Δ)
     delta = (Math.pow(b, 2)) + (-4 * a * c);
 
     if (delta > 0) {
         x1 = (((-b) + Math.sqrt(delta)) / (2 * a)).toFixed(3);
         x2 = (((-b) - Math.sqrt(delta)) / (2 * a)).toFixed(3);
-        document.getElementById("result").innerHTML = "x1 = " + x1 + " , x2 = " + x2;
+        document.getElementById("results").innerHTML = `X<sub>1</sub> = ${x1} , X<sub>2</sub> = ${x2}`;
     }
     else if (delta == 0) {
         x1 = (-b) / (2 * a);
-        document.getElementById("result").innerHTML = "x = " + x1;
+        document.getElementById("results").textContent = `x = ${x1}`;
     }
     else {
-        document.getElementById("result").innerHTML = "x = no real value";
+        document.getElementById("results").textContent = "x = no real value";
     }
 }
 
