@@ -11,7 +11,7 @@
     <meta name="keywords"
         content="quadratic equation solver, math quadratic equations">
     <meta name="description"
-        content="Quadratic Equation Solver is a SPW created with HTML, CSS, Tailwind CSS, and JavaScript to help you solve basic quadratic equations">
+        content="Quadratic Equation Solver is an SPW created with HTML, CSS, Tailwind CSS, and JavaScript to help you solve basic quadratic equations">
     <meta name="author" content="Shayan Zamani">
     <link rel="shortcut icon" href="math.svg" type="image/x-icon">
     <link rel="stylesheet" href="tw_output.css">
@@ -58,7 +58,7 @@
             <!-- Buttons -->
             <div
                 class="w-full flex justify-around items-center text-lg text-white my-7">
-                <button type="button" onclick="clearAll()"
+                <button type="button" id="clearAllBtn"
                     class="px-4 py-2.5 shadow border rounded bg-red-600 duration-200 focus:ring-2 focus:ring-red-500 focus:ring-offset-1 lg:hover:bg-red-700">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -68,7 +68,7 @@
                     </svg>
                 </button>
 
-                <button type="button" id="calc" onclick="checkCalc()"
+                <button type="button" id="calc"
                     class="px-5 py-2 shadow border rounded bg-sky-500 duration-200 focus:ring-2 focus:ring-sky-400 focus:ring-offset-1 lg:hover:bg-sky-600">
                     <span>Calculate</span>
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +83,7 @@
 
             <!-- Results -->
             <div>
-                <p id="result"
+                <p id="results"
                     class="text-center text-2xl border shadow-inner bg-white rounded h-16 flex justify-center items-center lg:font-semibold">
                     x = ?
                 </p>
