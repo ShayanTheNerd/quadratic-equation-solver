@@ -1,112 +1,168 @@
-<!-- Run the code below in the integrated Terminal to edit Tailwind CSS classes -->
-<!-- npx tailwindcss -i tw_input.css -o tw_output.css --watch -->
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en-US" dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Quadratic Equation Solver</title>
+		<meta name="author" content="Shayan Zamani" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="assets/favicon-x-sign.svg" type="image/x-icon" />
+		<link rel="stylesheet" href="assets/css/styles.css" />
+		<script defer src="assets/main.js"></script>
+	</head>
 
-<head>
-    <title>Quadratic Equation Solver</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords"
-        content="quadratic equation solver, math quadratic equations">
-    <meta name="description"
-        content="Quadratic Equation Solver is an SPW created with HTML, CSS, Tailwind CSS, and JavaScript to help you solve basic quadratic equations">
-    <meta name="author" content="Shayan Zamani">
-    <link rel="shortcut icon" href="math.svg" type="image/x-icon">
-    <link rel="stylesheet" href="tw_output.css">
-</head>
+	<body
+		class="flex min-h-screen flex-col justify-center gap-y-6 bg-gradient-to-b from-zinc-400 to-zinc-500 p-5 text-gray-900">
+		<main class="flex h-full flex-col items-center justify-evenly">
+			<h1 class="text-[21.5px] font-extrabold sm:text-2xl lg:text-3xl">Quadratic Equation Solver</h1>
 
-<body class="bg-slate-400 flex justify-center items-center w-screen h-screen">
-    <main
-        class="flex flex-col justify-evenly items-center space-y-7 -mt-10 lg:-mt-5">
-        <!-- Page title -->
-        <h1 class="text-2xl font-extrabold text-slate-800 lg:text-3xl">
-            Quadratic Equation Solver
-        </h1>
+			<article
+				class="my-4 space-y-8 overflow-hidden rounded-md bg-gray-400 p-4 shadow-2xl sm:my-8 sm:space-y-12 sm:p-7">
+				<div class="space-y-2 text-center font-medium leading-relaxed">
+					<p class="sm:text-lg">Enter your quadratic equation:</p>
 
-        <section
-            class="px-3 py-5 m-3 shadow-2xl rounded-lg overflow-hidden bg-gray-200 md:p-8 lg:m-0">
-            <!-- Box title -->
-            <p
-                class="text-center mx-auto text-slate-500 text-xl mb-8 leading-relaxed lg:font-semibold">
-                Enter your quadratic equation
-                <br>
-                ( y = ax<sup>2</sup> + bx + c )
-            </p>
+					<!-- formula: (y = a.x<sup>2</sup> + b.x + c) -->
+					<!-- reference: https://www.oreilly.com/library/view/html5-for-publishers/9781449320065/ch04.html -->
+					<math class="text-lg sm:text-xl">
+						<mrow>
+							<mi>y</mi>
+							<mo>=</mo>
+							<mi>a</mi>
+							<mo>&InvisibleTimes;</mo>
+							<msup>
+								<mi>x</mi>
+								<mn>2</mn>
+							</msup>
+							<mo>+</mo>
+							<mi>b</mi>
+							<mo>&InvisibleTimes;</mo>
+							<mi>x</mi>
+							<mo>+</mo>
+							<mi>c</mi>
+						</mrow>
+					</math>
+				</div>
 
-            <!-- Inputs -->
-            <div
-                class="w-full flex justify-between items-center text-xl md:space-x-0.5 lg:space-x-1">
-                <input type="number" id="a" placeholder="a" required
-                    class="placeholder:text-gray-500 placeholder:font-bold placeholder:text-2xl h-12 w-[70px] text-xl font-medium rounded bg-white text-center">
-                <span class="font-bold">
-                    X<sup>2</sup> +
-                </span>
-                <input type="number" id="b" placeholder="b" required
-                    class="placeholder:text-gray-500 placeholder:font-bold placeholder:text-2xl h-12 w-[70px] text-xl font-medium rounded bg-white text-center">
-                <span class="font-bold">
-                    X +
-                </span>
-                <input type="number" id="c" placeholder="c" required
-                    class="placeholder:text-gray-500 placeholder:font-bold placeholder:text-2xl h-12 w-[70px] text-xl font-medium rounded bg-white text-center">
-                <span class="font-bold">
-                    = 0
-                </span>
-            </div>
+				<section class="flex flex-col gap-y-5 sm:gap-y-7">
+					<form class="space-y-5 sm:space-y-7" id="calculationForm">
+						<!-- inputs -->
+						<!-- To have input validation with the 'pattern' attribute I had to use text input fields. -->
+						<fieldset class="flex text-xl">
+							<!-- variable 'a' -->
+							<input
+								type="text"
+								pattern="^-?(?!0)\d{1,3}$"
+								title="1-3 digit integer exept for 0"
+								placeholder="a"
+								required
+								name="VariableA"
+								data-variable-name="a"
+								class="number-input js-variable-input" />
 
-            <!-- Buttons -->
-            <div
-                class="w-full flex justify-around items-center text-lg text-white my-7">
-                <button type="button" id="clearAllBtn"
-                    class="px-4 py-2.5 shadow border rounded bg-red-600 duration-200 focus:ring-2 focus:ring-red-500 focus:ring-offset-1 lg:hover:bg-red-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
-                </button>
+							<!-- X^2 + -->
+							<math class="!ml-0.5 !mr-1.5 flex items-center text-2xl font-semibold">
+								<mo>&InvisibleTimes;</mo>
+								<msup class="!relative !bottom-1">
+									<mi>x</mi>
+									<mn>2</mn>
+								</msup>
+								<mo class="!ml-1 sm:!ml-2">+</mo>
+							</math>
 
-                <button type="button" id="calc"
-                    class="px-5 py-2 shadow border rounded bg-sky-500 duration-200 focus:ring-2 focus:ring-sky-400 focus:ring-offset-1 lg:hover:bg-sky-600">
-                    <span>Calculate</span>
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6 inline-block" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
-                </button>
-            </div>
+							<!-- variable 'b' -->
+							<input
+								type="text"
+								pattern="^-?\d{1,3}$"
+								title="1-3 digit integer"
+								placeholder="b"
+								required
+								name="VariableB"
+								data-variable-name="b"
+								class="number-input js-variable-input" />
 
-            <!-- Results -->
-            <div>
-                <p id="results"
-                    class="text-center text-2xl border shadow-inner bg-white rounded h-16 flex justify-center items-center lg:font-semibold">
-                    x = ?
-                </p>
-            </div>
-        </section>
+							<!-- X + -->
+							<math class="!ml-0.5 !mr-1.5 flex items-center text-2xl font-semibold">
+								<mo>&InvisibleTimes;</mo>
+								<mi>x</mi>
+								<mo class="!ml-1 sm:!ml-2">+</mo>
+							</math>
 
-        <!-- credits -->
-        <small
-            class="text-base text-center flex flex-col justify-center mt-3 pb-3 sm:flex-row lg:text-lg">
-            <p>
-                © Copyright
-                <span id="yearOfDate" class="mx-0.5">This Year</span>
-                | Created by
-            </p>
-            <a href="https://shayan-zamani.me" target="_blank"
-                rel="noopener noreferrer"
-                class="underline ml-2 text-lg font-semibold text-blue-600 lg:hover:text-blue-700 visited:text-purple-800 duration-150 lg:text-xl">
-                Shayan Zamani
-            </a>
-        </small>
-    </main>
+							<!-- variable 'c' -->
+							<input
+								type="text"
+								pattern="^-?\d{1,3}$"
+								title="1-3 digit integer"
+								placeholder="c"
+								required
+								name="VariableC"
+								data-variable-name="c"
+								class="number-input js-variable-input" />
 
-    <script defer src="scripts.js"></script>
-</body>
+							<!-- = 0 -->
+							<math class="!ml-0.5 flex items-center text-2xl font-semibold">
+								<mo class="!mx-1 sm:!mx-1.5">=</mo>
+								<mn>0</mn>
+							</math>
+						</fieldset>
 
+						<!-- buttons -->
+						<fieldset class="flex w-full items-center justify-around text-lg text-gray-100">
+							<button
+								type="button"
+								id="clearInputsBtn"
+								class="h-11 w-11 rounded-md bg-red-600 shadow duration-100 focus-visible:outline focus-visible:outline-[2.5px] focus-visible:outline-offset-[3px] focus-visible:outline-red-600 support:sm:hover:bg-red-700">
+								<svg class="m-auto h-6 w-6 fill-none stroke-current">
+									<path
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+								</svg>
+							</button>
+
+							<button
+								type="submit"
+								class="h-11 w-32 rounded-md bg-blue-600 shadow duration-100 focus-visible:outline focus-visible:outline-[2.5px] focus-visible:outline-offset-[3px] focus-visible:outline-blue-600 support:sm:hover:bg-blue-700">
+								<span>Calculate</span>
+								<svg class="m-auto inline-block h-6 w-6 fill-none stroke-current">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+								</svg>
+							</button>
+						</fieldset>
+					</form>
+
+					<!-- result box -->
+					<p
+						id="resultBox"
+						class="flex h-11 select-none items-center justify-center rounded-md bg-gray-100 text-center text-2xl tracking-widest">
+						<math>
+							<mi>x</mi>
+							<mo>=</mo>
+							<mtext>{</mtext>
+							<mspace width="5px" />
+							<mn>?</mn>
+							<mspace width="5px" />
+							<mtext>}</mtext>
+						</math>
+					</p>
+				</section>
+			</article>
+		</main>
+
+		<footer class="fixed left-0 right-0 bottom-7 -space-x-2 text-center">
+			<span class="text-gray-900">©</span>
+			<address class="-ml-1.5 inline-block not-italic">
+				<a
+					href="https://shayan-zamani.me"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="ml-2 rounded-md text-sm font-semibold text-blue-600 underline duration-150 visited:text-purple-700 focus-visible:outline focus-visible:outline-[2.5px] focus-visible:outline-offset-[3px] focus-visible:outline-blue-600 focus-visible:visited:text-current focus-visible:visited:outline-purple-700 sm:text-base support:hover:text-blue-700 support:visited:hover:text-purple-800">
+					Shayan Zamani
+				</a>
+			</address>
+		</footer>
+	</body>
 </html>

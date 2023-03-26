@@ -1,5 +1,10 @@
 module.exports = {
-  content: ["./assets/**/*.{html,js}", "*.html"],
-  theme: {},
-  plugins: [],
-}
+	content: ['./index.html', './main.js'],
+	theme: {
+		extend: {
+			screens: {
+				support: { raw: '(hover: hover)' }, // check if hover is supported on the device
+			},
+		},
+	},
+};
