@@ -4,12 +4,11 @@ Quadratic Equation Solver (QES) is a tool that helps you solve mathematical quad
 
 <figure>
   <img src="https://github.com/ShayanTheNerd/quadratic-equation-solver/blob/main/preview-screenshot.jpeg" />
-  <figcaption align="center">Project Preview</figcaption>
 </figure>
 
 ## Technologies used in this project
 <ul>
-  <li>HTML-CSS-JavaScript</li>
+  <li>HTML, CSS, JavaScript</li>
   <li>
     <a href="https://tailwindcss.com">Tailwind CSS</a>
   </li>
