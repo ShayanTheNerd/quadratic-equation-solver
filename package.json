@@ -30,7 +30,7 @@
 	},
 	"scripts": {
 		"dev": "npx tailwindcss -i ./assets/css/tw_input.css -o ./assets/css/styles.css --watch",
-		"prod": "npx tailwindcss -i ./assets/css/tw_input.css -o ./assets/css/styles.css --minify",
+		"build": "npx tailwindcss -i ./assets/css/tw_input.css -o ./assets/css/styles.css --minify",
 		"format": "npx prettier --write ."
 	}
 }
