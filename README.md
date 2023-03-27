@@ -92,4 +92,4 @@ More projects like this: https://github.com/ShayanTheNerd?tab=repositories <br /
 The code in this project is licensed under <a href="https://github.com/ShayanTheNerd/quadratic-equation-solver/blob/main/LICENSE.md">MIT license</a>. You're free to use it; but a link to this page and mentioning the author's name is mandatory.
 
 <br /><br />
-<a href="https://github.com/ShayanTheNerd/quadratic-equation-solver/tree/main#quadratic-equation-solver">Back to top ⬆️</a>
+<a href="https://github.com/ShayanTheNerd/quadratic-equation-solver#quadratic-equation-solver">Back to top ⬆️</a>
