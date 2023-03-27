@@ -85,7 +85,7 @@ Your contribution is always welcome, please follow these steps:
 <ol>
   <li>Fork (https://github.com/ShayanTheNerd/quadratic-equation-solver/fork)</li>
   <li>Create your feature branch (<code>git checkout -b feature/branch-name</code>)</li>
-  <li>Make sure you follow instructions in the <a href="https://github.com/ShayanTheNerd/quadratic-equation-solver/edit/main/README.md#style-guide">syle guide</a></li>
+  <li>Make sure you follow instructions in the <a href="https://github.com/ShayanTheNerd/quadratic-equation-solver#style-guide">syle guide</a></li>
   <li>Commit your changes (<code>git commit -am 'Added foo bar baz feature'</code>)</li>
   <li>Push to the branch (<code>git push origin feature/branch-name</code>)</li>
   <li>Create a new Pull Request</li>
