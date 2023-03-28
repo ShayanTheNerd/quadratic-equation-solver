@@ -42,101 +42,102 @@
 					</math>
 				</div>
 
-				<section class="flex flex-col gap-y-5 sm:gap-y-7">
-					<form class="space-y-5 sm:space-y-7" id="calculationForm">
-						<!-- inputs -->
-						<!-- To have input validation with the 'pattern' attribute I had to use text input fields. -->
-						<fieldset class="flex text-xl">
-							<!-- variable 'a' -->
-							<input
-								type="text"
-								pattern="^-?(?!0)\d{1,3}$"
-								title="1-3 digit integer exept for 0"
-								placeholder="a"
-								required
-								name="VariableA"
-								data-variable-name="a"
-								class="number-input js-variable-input" />
+				<form class="flex flex-col gap-y-5 sm:gap-y-7" id="calculationForm">
+					<!-- inputs -->
+					<!-- To have input validation with the 'pattern' attribute I had to use 'text' input fields. -->
+					<fieldset class="flex text-xl">
+						<!-- variable 'a' -->
+						<input
+							type="text"
+							pattern="^-?(?!0)\d{1,3}$"
+							title="1-3 digit integer exept for 0"
+							placeholder="a"
+							required
+							name="VariableA"
+							id="variableA"
+							data-variable-name="a"
+							class="number-input js-variable-input" />
 
-							<!-- X^2 + -->
-							<math class="!ml-0.5 !mr-1.5 flex items-center text-2xl font-semibold">
-								<mo>&InvisibleTimes;</mo>
-								<msup class="!relative !bottom-1">
-									<mi>x</mi>
-									<mn>2</mn>
-								</msup>
-								<mo class="!ml-1 sm:!ml-2">+</mo>
-							</math>
-
-							<!-- variable 'b' -->
-							<input
-								type="text"
-								pattern="^-?\d{1,3}$"
-								title="1-3 digit integer"
-								placeholder="b"
-								required
-								name="VariableB"
-								data-variable-name="b"
-								class="number-input js-variable-input" />
-
-							<!-- X + -->
-							<math class="!ml-0.5 !mr-1.5 flex items-center text-2xl font-semibold">
-								<mo>&InvisibleTimes;</mo>
+						<!-- X^2 + -->
+						<math class="!ml-0.5 !mr-1.5 flex items-center text-2xl font-semibold">
+							<mo>&InvisibleTimes;</mo>
+							<msup class="!relative !bottom-1">
 								<mi>x</mi>
-								<mo class="!ml-1 sm:!ml-2">+</mo>
-							</math>
+								<mn>2</mn>
+							</msup>
+							<mo class="!ml-1 sm:!ml-2">+</mo>
+						</math>
 
-							<!-- variable 'c' -->
-							<input
-								type="text"
-								pattern="^-?\d{1,3}$"
-								title="1-3 digit integer"
-								placeholder="c"
-								required
-								name="VariableC"
-								data-variable-name="c"
-								class="number-input js-variable-input" />
+						<!-- variable 'b' -->
+						<input
+							type="text"
+							pattern="^-?\d{1,3}$"
+							title="1-3 digit integer"
+							placeholder="b"
+							required
+							name="VariableB"
+							id="variableB"
+							data-variable-name="b"
+							class="number-input js-variable-input" />
 
-							<!-- = 0 -->
-							<math class="!ml-0.5 flex items-center text-2xl font-semibold">
-								<mo class="!mx-1 sm:!mx-1.5">=</mo>
-								<mn>0</mn>
-							</math>
-						</fieldset>
+						<!-- X + -->
+						<math class="!ml-0.5 !mr-1.5 flex items-center text-2xl font-semibold">
+							<mo>&InvisibleTimes;</mo>
+							<mi>x</mi>
+							<mo class="!ml-1 sm:!ml-2">+</mo>
+						</math>
 
-						<!-- buttons -->
-						<fieldset class="flex w-full items-center justify-around text-lg text-gray-100">
-							<button
-								type="button"
-								id="clearInputsBtn"
-								class="h-11 w-11 rounded-md bg-red-600 shadow duration-100 focus-visible:outline focus-visible:outline-[2.5px] focus-visible:outline-offset-[3px] focus-visible:outline-red-600 support:sm:hover:bg-red-700">
-								<svg class="m-auto h-6 w-6 fill-none stroke-current">
-									<path
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-								</svg>
-							</button>
+						<!-- variable 'c' -->
+						<input
+							type="text"
+							pattern="^-?\d{1,3}$"
+							title="1-3 digit integer"
+							placeholder="c"
+							required
+							name="VariableC"
+							id="variableC"
+							data-variable-name="c"
+							class="number-input js-variable-input" />
 
-							<button
-								type="submit"
-								class="h-11 w-32 rounded-md bg-blue-600 shadow duration-100 focus-visible:outline focus-visible:outline-[2.5px] focus-visible:outline-offset-[3px] focus-visible:outline-blue-600 support:sm:hover:bg-blue-700">
-								<span>Calculate</span>
-								<svg class="m-auto inline-block h-6 w-6 fill-none stroke-current">
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-								</svg>
-							</button>
-						</fieldset>
-					</form>
+						<!-- = 0 -->
+						<math class="!ml-0.5 flex items-center text-2xl font-semibold">
+							<mo class="!mx-1 sm:!mx-1.5">=</mo>
+							<mn>0</mn>
+						</math>
+					</fieldset>
 
-					<!-- result box -->
-					<p
+					<!-- buttons -->
+					<fieldset class="flex w-full items-center justify-around text-lg text-gray-100">
+						<button
+							type="button"
+							id="clearInputsBtn"
+							class="h-11 w-11 rounded-md bg-red-600 shadow duration-100 focus-visible:outline focus-visible:outline-[2.5px] focus-visible:outline-offset-[3px] focus-visible:outline-red-600 support:sm:hover:bg-red-700">
+							<svg class="m-auto h-6 w-6 fill-none stroke-current">
+								<path
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+							</svg>
+						</button>
+
+						<button
+							type="submit"
+							class="h-11 w-32 rounded-md bg-blue-600 shadow duration-100 focus-visible:outline focus-visible:outline-[2.5px] focus-visible:outline-offset-[3px] focus-visible:outline-blue-600 support:sm:hover:bg-blue-700">
+							<span>Calculate</span>
+							<svg class="m-auto inline-block h-6 w-6 fill-none stroke-current">
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+							</svg>
+						</button>
+					</fieldset>
+
+					<output
 						id="resultBox"
+						for="variableA variableB variableC"
 						class="flex h-11 select-none items-center justify-center rounded-md bg-gray-100 text-center text-2xl tracking-widest">
 						<math>
 							<mi>x</mi>
@@ -147,8 +148,8 @@
 							<mspace width="5px" />
 							<mtext>}</mtext>
 						</math>
-					</p>
-				</section>
+					</output>
+				</form>
 			</article>
 		</main>
 
