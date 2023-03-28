@@ -62,12 +62,12 @@ function solveForX(delta, variables) {
 			const valueOfX2 = ((-b - Math.sqrt(delta)) / (2 * a)).toFixed(2);
 			const resultMarkup = /* xml */ `
             <math style="display: flex; justify-content: space-around; width: 100%">
-               <mrow>
+               <mrow style="margin-left: 25px; margin-right: 35px" class="sm:!m-0">
                   <msub>
                      <mi>x</mi>
-                     <mn>2</mn>
+                     <mn>1</mn>
                   </msub>
-                  <mo>=</mo>
+                  <mo style="margin-inline: -3px" class="sm:!m-0">=</mo>
                   <mn>${valueOfX1}</mn>
                </mrow>
 
@@ -76,7 +76,7 @@ function solveForX(delta, variables) {
                      <mi>x</mi>
                      <mn>2</mn>
                   </msub>
-                  <mo>=</mo>
+                  <mo style="margin-inline: -3px" class="sm:!m-0">=</mo>
                   <mn>${valueOfX2}</mn>
                </mrow>
             </math>

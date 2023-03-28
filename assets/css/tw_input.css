@@ -3,7 +3,7 @@
 @tailwind utilities;
 @layer components {
 	.number-input {
-		@apply h-11 w-11 rounded-md bg-gray-100 text-center font-medium placeholder:text-2xl placeholder:font-bold placeholder:text-gray-500 focus:outline focus:outline-[3px] focus:outline-gray-900 sm:mr-px;
+		@apply h-11 w-11 rounded-md bg-gray-100 text-center font-medium placeholder:text-2xl placeholder:font-bold placeholder:text-gray-500 focus:border-[3px] focus:border-gray-900 focus:outline-none;
 	}
 }
 
@@ -13,11 +13,6 @@ button {
 }
 button:active {
 	@apply scale-90;
-}
-
-/* inner box shadow of the result box */
-#resultContainer {
-	box-shadow: inset 0 0 5px 0 #111827;
 }
 
 /* math elements in the result box */

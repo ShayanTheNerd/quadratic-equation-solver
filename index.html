@@ -5,19 +5,18 @@
 		<title>Quadratic Equation Solver</title>
 		<meta name="author" content="Shayan Zamani" />
 		<meta name="theme-color" content="#a1a1aa" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 		<link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon" />
 		<link rel="stylesheet" href="assets/css/styles.css" />
 		<script defer src="assets/main.js"></script>
 	</head>
 
 	<body
-		class="flex min-h-screen flex-col justify-center gap-y-6 bg-gradient-to-b from-zinc-400 to-zinc-500 p-5 text-gray-900">
+		class="flex min-h-screen flex-col gap-y-6 bg-gradient-to-b from-zinc-400 to-zinc-500 p-5 pt-20 text-gray-900 sm:justify-center sm:pt-5">
 		<main class="flex h-full flex-col items-center justify-evenly">
 			<h1 class="text-[21.5px] font-extrabold sm:text-2xl lg:text-3xl">Quadratic Equation Solver</h1>
 
-			<article
-				class="my-4 space-y-8 overflow-hidden rounded-md bg-gray-400 p-4 shadow-2xl sm:my-8 sm:space-y-12 sm:p-7">
+			<article class="my-4 space-y-8 rounded-md bg-gray-400 p-4 shadow-2xl sm:my-8 sm:space-y-12 sm:p-7">
 				<div class="space-y-2 text-center font-medium leading-relaxed">
 					<p class="sm:text-lg">Enter your quadratic equation:</p>
 
@@ -49,61 +48,67 @@
 					<fieldset class="flex text-xl">
 						<!-- variable 'a' -->
 						<input
+							required
 							type="text"
+							id="variableA"
+							maxlength="3"
+							placeholder="a"
+							name="VariableA"
+							inputmode="decimal"
+							data-variable-name="a"
 							pattern="^-?(?!0)\d{1,3}$"
 							title="1-3 digit integer exept for 0"
-							placeholder="a"
-							required
-							name="VariableA"
-							id="variableA"
-							data-variable-name="a"
 							class="number-input js-variable-input" />
 
-						<!-- X^2 + -->
-						<math class="!ml-0.5 !mr-1.5 flex items-center text-2xl font-semibold">
+						<!-- 'X^2 +' -->
+						<math class="ml-0.5 flex items-center text-2xl font-semibold sm:mr-1.5">
 							<mo>&InvisibleTimes;</mo>
-							<msup class="!relative !bottom-1">
+							<msup class="relative -bottom-1.5 sm:bottom-1">
 								<mi>x</mi>
 								<mn>2</mn>
 							</msup>
-							<mo class="!ml-1 sm:!ml-2">+</mo>
+							<mo class="relative -bottom-1.5 -ml-1 sm:bottom-0 sm:ml-2 sm:mr-1">+</mo>
 						</math>
 
 						<!-- variable 'b' -->
 						<input
-							type="text"
-							pattern="^-?\d{1,3}$"
-							title="1-3 digit integer"
-							placeholder="b"
 							required
-							name="VariableB"
+							type="text"
 							id="variableB"
+							maxlength="3"
+							placeholder="b"
+							name="VariableB"
+							inputmode="decimal"
+							pattern="^-?\d{1,3}$"
 							data-variable-name="b"
+							title="1-3 digit integer"
 							class="number-input js-variable-input" />
 
-						<!-- X + -->
-						<math class="!ml-0.5 !mr-1.5 flex items-center text-2xl font-semibold">
+						<!-- 'X +' -->
+						<math class="ml-0.5 flex items-center text-2xl font-semibold sm:mr-1.5">
 							<mo>&InvisibleTimes;</mo>
-							<mi>x</mi>
-							<mo class="!ml-1 sm:!ml-2">+</mo>
+							<mi class="relative -bottom-4 sm:bottom-0">x</mi>
+							<mo class="relative -bottom-4 sm:bottom-0 sm:ml-2 sm:mr-1">+</mo>
 						</math>
 
 						<!-- variable 'c' -->
 						<input
-							type="text"
-							pattern="^-?\d{1,3}$"
-							title="1-3 digit integer"
-							placeholder="c"
 							required
-							name="VariableC"
+							type="text"
 							id="variableC"
+							maxlength="3"
+							placeholder="c"
+							name="VariableC"
+							inputmode="decimal"
+							pattern="^-?\d{1,3}$"
 							data-variable-name="c"
+							title="1-3 digit integer"
 							class="number-input js-variable-input" />
 
-						<!-- = 0 -->
-						<math class="!ml-0.5 flex items-center text-2xl font-semibold">
-							<mo class="!mx-1 sm:!mx-1.5">=</mo>
-							<mn>0</mn>
+						<!-- '= 0' -->
+						<math class="relative -bottom-3 flex items-center text-2xl font-semibold sm:bottom-0">
+							<mo class="sm:mx-2">=</mo>
+							<mn class="relative -bottom-0.5 sm:bottom-0">0</mn>
 						</math>
 					</fieldset>
 
@@ -139,7 +144,7 @@
 					<output
 						id="resultBox"
 						for="variableA variableB variableC"
-						class="flex h-11 select-none items-center justify-center rounded-md bg-gray-100 text-center text-2xl tracking-widest">
+						class="flex h-11 select-none items-center justify-center rounded-md bg-gray-100 text-center text-2xl tracking-widest shadow-[inset_0_0_5px_#111827]">
 						<math>
 							<mi>x</mi>
 							<mo>=</mo>
@@ -154,8 +159,8 @@
 			</article>
 		</main>
 
-		<footer class="fixed left-0 right-0 bottom-7 -space-x-2 text-center">
-			<span class="text-gray-900">©</span>
+		<footer class="absolute left-0 right-0 bottom-7 -space-x-2 text-center">
+			<span class="pt-0.5 text-gray-900">©</span>
 			<address class="-ml-1.5 inline-block not-italic">
 				<a
 					href="https://shayan-zamani.me"

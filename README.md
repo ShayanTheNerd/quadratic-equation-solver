@@ -7,6 +7,7 @@ Quadratic Equation Solver (QES) is a tool that helps you solve mathematical quad
 </figure>
 
 ## Technologies used in this project
+
 <ul>
   <li>HTML, CSS, JavaScript</li>
   <li>
@@ -15,21 +16,26 @@ Quadratic Equation Solver (QES) is a tool that helps you solve mathematical quad
 </ul>
 
 ## Features
+
 <ul>
   <li>Semantic, clean, and extendable code</li>
   <li>Input validation with <code>pattern</code> attribute</li>
 </ul>
 
 ## How it works
+
 Enter corresponding values for 3 variables **a**, **b**, and **c**. Then, the equations will be automatically created, solved, and it will output the value/values of variable **x**.
 
 ## Development setup
+
 #### First, clone the project:
+
 ```sh
 git clone https://github.com/ShayanTheNerd/quadratic-equation-solver.git
 ```
 
 Alternatively, you can copy the source of the project directly to your local environment using <a href="https://github.com/Rich-Harris/degit">Degit</a>:
+
 ```sh
 npm install -g degit
 
@@ -37,28 +43,35 @@ degit https://github.com/ShayanTheNerd/quadratic-equation-solver new-project-fol
 ```
 
 #### Then, install necessary npm packages:
+
 ```sh
 npm i
 ```
 
 #### Finally, run the `dev` script and preview project on a local server:
+
 ```sh
 npm run dev
 ```
 
 #### In order to format the code with Prettier, install the extension on your code editor. Then, either enable the `"editor.formatOnSave": true` (or a similar option) in the settings, or manually run this command:
+
 ```sh
 npm run format
 ```
 
-## Deployment and production 
+## Deployment and production
+
 #### Before deploying the project, run this command to minify all CSS code and prepare for production:
+
 ```sh
 npm run build
 ```
 
 ## Style Guide
+
 If you want to develop this project, please stick to these rules:
+
 <ul>
   <li>Follow the current architecture, coding paradigm, and project folder structure</li>
   <li>Follow the current character case principals for ids, classes, variables, file and folder names, etc.</li>
@@ -68,7 +81,9 @@ If you want to develop this project, please stick to these rules:
 </ul>
 
 ## Contribution
+
 Your contribution is always welcome, please follow these steps:
+
 <ol>
   <li>Fork the project (https://github.com/ShayanTheNerd/quadratic-equation-solver/fork)</li>
   <li>Create your feature branch (<code>git checkout -b feature/branch-name</code>)</li>
@@ -79,6 +94,7 @@ Your contribution is always welcome, please follow these steps:
 </ol>
 
 ## Links
+
 Project homepage: https://shayanthenerd.github.io/quadratic-equation-solver <br /><br />
 Repository: https://github.com/ShayanTheNerd/quadratic-equation-solver <br /><br />
 Issues: https://github.com/ShayanTheNerd/quadratic-equation-solver/issues <br /><br />
@@ -86,9 +102,11 @@ Pull requests: https://github.com/ShayanTheNerd/quadratic-equation-solver/pulls 
 More projects like this: https://github.com/ShayanTheNerd?tab=repositories <br /><br />
 
 ## Author
+
 <a href="https://shayan-zamani.me">Shayan Zamani</a>
 
 ## License
+
 The code in this project is licensed under <a href="https://github.com/ShayanTheNerd/quadratic-equation-solver/blob/main/LICENSE.md">MIT license</a>. You're free to use it; but a link to this page and mentioning the author's name is mandatory.
 
 <br /><br />
