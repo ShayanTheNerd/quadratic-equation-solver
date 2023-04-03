@@ -13,7 +13,7 @@
 		"quadratic equation solver",
 		"tailwindcss CLI template"
 	],
-	"description": "A simple quadratic equation solver.",
+	"description": "Solve basic quadratic equations in the blink of an eye!",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ShayanTheNerd/quadratic-equation-solver",
@@ -24,9 +24,9 @@
 		"email": "sh.zamani384@gmail.com"
 	},
 	"devDependencies": {
-		"prettier": "^2.8.4",
-		"prettier-plugin-tailwindcss": "^0.2.3",
-		"tailwindcss": "^3.3.0"
+		"prettier": "^2.8.7",
+		"prettier-plugin-tailwindcss": "^0.2.6",
+		"tailwindcss": "^3.3.1"
 	},
 	"scripts": {
 		"dev": "npx tailwindcss -i ./assets/css/tw_input.css -o ./assets/css/styles.css --watch",
