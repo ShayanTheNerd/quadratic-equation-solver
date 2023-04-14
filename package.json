@@ -4,24 +4,24 @@
 	"readme": "https://github.com/ShayanTheNerd/quadratic-equation-solver#readme",
 	"author": {
 		"name": "Shayan Zamani",
-		"email": "sh.zamani384@gmail.com",
-		"url": "https://shayan-zamani.me/"
+		"url": "https://shayan-zamani.me/",
+		"email": "sh.zamani384@gmail.com"
 	},
 	"keywords": [
 		"html css js",
 		"responsive design",
-		"quadratic equation solver",
-		"tailwindcss CLI template"
+		"tailwindcss CLI template",
+		"quadratic equation solver"
 	],
 	"description": "Solve basic quadratic equations in the blink of an eye!",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ShayanTheNerd/quadratic-equation-solver",
-		"directory": "main"
+		"directory": "main",
+		"url": "https://github.com/ShayanTheNerd/quadratic-equation-solver"
 	},
 	"bugs": {
-		"url": "https://github.com/ShayanTheNerd/quadratic-equation-solver/issues",
-		"email": "sh.zamani384@gmail.com"
+		"email": "sh.zamani384@gmail.com",
+		"url": "https://github.com/ShayanTheNerd/quadratic-equation-solver/issues"
 	},
 	"devDependencies": {
 		"prettier": "^2.8.7",
@@ -29,8 +29,8 @@
 		"tailwindcss": "^3.3.1"
 	},
 	"scripts": {
+		"format": "npx prettier --write .",
 		"dev": "npx tailwindcss -i ./assets/css/tw-input.css -o ./assets/css/styles.css --watch",
-		"build": "npx tailwindcss -i ./assets/css/tw-input.css -o ./assets/css/styles.css --minify",
-		"format": "npx prettier --write ."
+		"build": "npx tailwindcss -i ./assets/css/tw-input.css -o ./assets/css/styles.css --minify"
 	}
 }
