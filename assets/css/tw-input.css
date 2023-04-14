@@ -1,30 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	button:active {
+		@apply scale-95;
+	}
+	:focus-visible:where(button, a) {
+		@apply outline outline-[2.5px] outline-offset-[3px];
+	}
+}
+
 @layer components {
 	.number-input {
 		@apply h-11 w-11 rounded-md bg-gray-100 text-center font-medium placeholder:text-2xl placeholder:font-bold placeholder:text-gray-500 focus:border-[3px] focus:border-gray-900 focus:outline-none;
 	}
-}
 
-/* reset buttons */
-button {
-	@apply border-none outline-none;
-}
-button:active {
-	@apply scale-90;
-}
-
-/* math elements in the result box */
-#resultBox :where(mo, mi, mn) {
-	@apply relative;
-}
-#resultBox mo {
-	@apply top-[1px];
-}
-#resultBox mi {
-	@apply top-[-0.5px];
-}
-#resultBox mn {
-	@apply top-[0.5px];
+	/* math elements in the result box */
+	.result-box :where(mo, mi, mn) {
+		@apply relative;
+	}
+	.result-box mo {
+		@apply top-[1px];
+	}
+	.result-box mi {
+		@apply top-[-0.5px];
+	}
+	.result-box mn {
+		@apply top-[0.5px];
+	}
 }

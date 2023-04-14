@@ -2,17 +2,18 @@
 
 // required DOM nodes
 const variableInputs = [...document.querySelectorAll('.js-variable-input')];
-const clearInputsBtn = document.querySelector('#clearInputsBtn');
-const calculationForm = document.querySelector('#calculationForm');
-const resultBox = document.querySelector('#resultBox');
+const clearInputsBtn = document.getElementById('clearInputsButton');
+const calculationForm = document.getElementById('calculationForm');
+const resultBox = document.getElementById('resultBox');
 
 // event listeners
 clearInputsBtn.addEventListener('click', clearInputs);
 calculationForm.addEventListener('submit', solveEquation);
+document.addEventListener('DOMContentLoaded', () => variableInputs[0].focus());
 
 // function declarations
 function clearInputs() {
-	const emptyResultboxMarkup = /* xml */ `
+	const emptyResultBoxMarkup = /* xml */ `
       <math>
          <mrow>
             <mi>x</mi>
@@ -26,7 +27,7 @@ function clearInputs() {
       </math>
    `;
 
-	resultBox.innerHTML = emptyResultboxMarkup;
+	resultBox.innerHTML = emptyResultBoxMarkup;
 
 	variableInputs.forEach(input => (input.value = ''));
 
@@ -81,7 +82,6 @@ function solveForX(delta, variables) {
                </mrow>
             </math>
          `;
-
 			resultBox.innerHTML = resultMarkup;
 			break;
 		}
@@ -96,7 +96,6 @@ function solveForX(delta, variables) {
                </mrow>
             </math>
          `;
-
 			resultBox.innerHTML = resultMarkup;
 			break;
 		}
@@ -110,7 +109,6 @@ function solveForX(delta, variables) {
                </mrow>
             </math>
          `;
-
 			resultBox.innerHTML = resultMarkup;
 			break;
 		}

@@ -116,8 +116,9 @@
 					<fieldset class="flex w-full items-center justify-around text-lg text-gray-100">
 						<button
 							type="button"
-							id="clearInputsBtn"
-							class="h-11 w-11 rounded-md bg-red-600 shadow duration-100 focus-visible:outline focus-visible:outline-[2.5px] focus-visible:outline-offset-[3px] focus-visible:outline-red-600 support:sm:hover:bg-red-700">
+							id="clearInputsButton"
+							title="clear inputs"
+							class="h-11 w-11 rounded-md bg-red-600 shadow duration-150 focus-visible:outline-red-600 support:sm:hover:bg-red-700">
 							<svg class="m-auto h-6 w-6 fill-none stroke-current">
 								<path
 									stroke-width="2"
@@ -129,9 +130,9 @@
 
 						<button
 							type="submit"
-							class="h-11 w-32 rounded-md bg-blue-600 shadow duration-100 focus-visible:outline focus-visible:outline-[2.5px] focus-visible:outline-offset-[3px] focus-visible:outline-blue-600 support:sm:hover:bg-blue-700">
+							class="h-11 w-32 rounded-md bg-blue-600 shadow duration-150 focus-visible:outline-blue-600 support:sm:hover:bg-blue-700">
 							<span>Calculate</span>
-							<svg class="m-auto inline-block h-6 w-6 fill-none stroke-current">
+							<svg class="m-auto -mt-1 inline-block h-6 w-6 fill-none stroke-current">
 								<path
 									stroke-linecap="round"
 									stroke-linejoin="round"
@@ -144,7 +145,7 @@
 					<output
 						id="resultBox"
 						for="variableA variableB variableC"
-						class="flex h-11 select-none items-center justify-center rounded-md bg-gray-100 text-center text-2xl tracking-widest shadow-[inset_0_0_5px_#111827]">
+						class="result-box flex h-11 select-none items-center justify-center rounded-md bg-gray-100 text-center text-2xl tracking-widest shadow-[inset_0_0_5px_#111827]">
 						<math>
 							<mi>x</mi>
 							<mo>=</mo>
@@ -159,14 +160,14 @@
 			</article>
 		</main>
 
-		<footer class="absolute left-0 right-0 bottom-7 -space-x-2 text-center">
+		<footer class="absolute bottom-7 left-0 right-0 -space-x-2 text-center">
 			<span class="pt-0.5 text-gray-900">©</span>
 			<address class="-ml-1.5 inline-block not-italic">
 				<a
 					href="https://shayan-zamani.me"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="ml-2 rounded-md text-sm font-semibold text-blue-600 underline duration-150 visited:text-purple-700 focus-visible:outline focus-visible:outline-[2.5px] focus-visible:outline-offset-[3px] focus-visible:outline-blue-600 focus-visible:visited:text-current focus-visible:visited:outline-purple-700 sm:text-base support:hover:text-blue-700 support:visited:hover:text-purple-800">
+					class="ml-2 rounded-md text-sm font-semibold text-blue-800 underline duration-150 visited:text-purple-800 focus-visible:outline-blue-800 focus-visible:visited:outline-purple-800 sm:text-base support:hover:text-blue-900 support:visited:hover:text-purple-900">
 					Shayan Zamani
 				</a>
 			</address>
