@@ -3,7 +3,7 @@
 Quadratic Equation Solver (QES) is a tool that helps you solve mathematical quadratic equations in the blink of an eye!
 
 <figure>
-  <img src="https://github.com/ShayanTheNerd/quadratic-equation-solver/blob/main/open-graph-image.jpg" />
+  <img src="https://github.com/ShayanTheNerd/quadratic-equation-solver/blob/main/og-img.png" />
 </figure>
 
 ## Technologies used in this project
