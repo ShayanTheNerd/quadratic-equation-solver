@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+<html lang="en" dir="ltr">
 	<!-- prettier-ignore -->
 	<head>
 		<meta charset="UTF-8" />
@@ -7,30 +7,28 @@
 
 		<meta name="theme-color" content="#a1a1aa" />
 		<meta name="author" content="Shayan Zamani" />
-		<meta name="color-scheme" content="light dark" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-		<meta name="keywords" content="math online tool, quadratic equation solver, quadratic equations, math solver" />
+		<meta name="keywords" content="math online free tool, free quadratic equation solver, quadratic equations, math solver" />
       
       <meta property="og:type" content="website" />
 		<meta property="og:site_name" content="shayan-zamani.me" />
 		<meta property="og:title" name="title" content="Quadratic Equation Solver" />
-		<meta property="og:url" content="https://shayanthenerd.github.io/quadratic-equation-solver/" />
+		<meta property="og:url" content="https://shayanthenerd.github.io/quadratic-equation-solver" />
 		<meta property="og:image" content="https://shayanthenerd.github.io/quadratic-equation-solver/og-img.webp" />
-      <meta property="og:image:alt" content="quadratic equation solver" />
+      <meta property="og:image:alt" content="Quadratic Equation Solver" />
       <meta property="og:image:width" content="1200">
       <meta property="og:image:height" content="630">
-		<meta property="og:description" name="description" content="Easily solve quadratic equations in the blink of an eye. Just enter corresponding number values for varibales A, B, and C, and the value of the variable X will be resolved." />
+		<meta property="og:description" name="description" content="Easily solve quadratic equations in the blink of an eye. Just enter the values of the variables A, B, the, have let the calculator solve the equation for you!" />
 
       <meta name="twitter:site" content="@shayan-zamani.me">
       <meta name="twitter:title" content="Quadratic Equation Solver">
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:image" content="https://shayanthenerd.github.io/quadratic-equation-solver/og-img.webp" />
-      <meta property="twitter:image:alt" content="quadratic equation solver" />
-      <meta name="twitter:description" content="Easily solve quadratic equations in the blink of an eye. Just enter corresponding number values for varibales A, B, and C, and the value of the variable X will be resolved.">
+      <meta property="twitter:image:alt" content="Quadratic Equation Solver" />
 
-		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.svg" />
-		<link rel="stylesheet" href="assets/css/styles.css" />
-		<script defer src="assets/main.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.svg" />
+		<link rel="stylesheet" href="./assets/css/styles.css" />
+		<script type="module" src="./assets/js/app.js"></script>
 	</head>
 
 	<body
@@ -42,8 +40,7 @@
 				<div class="space-y-2 text-center font-medium leading-relaxed">
 					<p class="sm:text-lg">Enter your quadratic equation:</p>
 
-					<!-- formula: (y = a.x<sup>2</sup> + b.x + c) -->
-					<!-- reference: https://www.oreilly.com/library/view/html5-for-publishers/9781449320065/ch04.html -->
+					<!-- MathML reference: https://www.oreilly.com/library/view/html5-for-publishers/9781449320065/ch04.html -->
 					<math class="text-lg sm:text-xl">
 						<mrow>
 							<mi>y</mi>
@@ -64,83 +61,81 @@
 					</math>
 				</div>
 
-				<form class="flex flex-col gap-y-5 sm:gap-y-7" id="calculationForm">
-					<!-- inputs -->
-					<!-- To have input validation with the 'pattern' attribute I had to use 'text' input fields. -->
+				<form inputmode="numeric" id="calculation_form" class="flex flex-col gap-y-5 sm:gap-y-7">
 					<fieldset class="flex text-xl">
-						<!-- variable 'a' -->
+						<legend class="sr-only">A, B, and C variables</legend>
+
+						<label for="variable_A" class="sr-only">Variable A</label>
 						<input
 							required
+							autofocus
 							type="text"
-							id="variableA"
+							id="variable_A"
 							maxlength="3"
 							placeholder="a"
-							name="VariableA"
-							inputmode="decimal"
+							name="Variable-A"
 							data-variable-name="a"
 							pattern="^-?(?!0)\d{1,3}$"
 							title="1-3 digit integer exept for 0"
-							class="number-input js-variable-input" />
+							class="js-variable-input number-input" />
 
 						<!-- 'X^2 +' -->
-						<math class="ml-0.5 flex items-center text-2xl font-semibold sm:mr-1.5">
+						<math class="ml-0.5 flex items-center text-xl font-semibold sm:mr-1.5 sm:text-2xl">
 							<mo>&InvisibleTimes;</mo>
-							<msup class="relative -bottom-1.5 sm:bottom-1">
+							<msup class="relative bottom-0.5">
 								<mi>x</mi>
 								<mn>2</mn>
 							</msup>
-							<mo class="relative -bottom-1.5 -ml-1 sm:bottom-0 sm:ml-2 sm:mr-1">+</mo>
+							<mo class="px-1.5 sm:pr-0.5">+</mo>
 						</math>
 
-						<!-- variable 'b' -->
+						<label for="variable_B" class="sr-only">Variable B</label>
 						<input
 							required
 							type="text"
-							id="variableB"
+							id="variable_B"
 							maxlength="3"
 							placeholder="b"
-							name="VariableB"
-							inputmode="decimal"
+							name="Variable-B"
 							pattern="^-?\d{1,3}$"
 							data-variable-name="b"
 							title="1-3 digit integer"
-							class="number-input js-variable-input" />
+							class="js-variable-input number-input" />
 
 						<!-- 'X +' -->
-						<math class="ml-0.5 flex items-center text-2xl font-semibold sm:mr-1.5">
+						<math class="ml-0.5 flex items-center text-xl font-semibold sm:mr-1.5 sm:text-2xl">
 							<mo>&InvisibleTimes;</mo>
-							<mi class="relative -bottom-4 sm:bottom-0">x</mi>
-							<mo class="relative -bottom-4 sm:bottom-0 sm:ml-2 sm:mr-1">+</mo>
+							<mi class="relative -bottom-0.5">x</mi>
+							<mo class="px-1.5 sm:pr-0.5">+</mo>
 						</math>
 
-						<!-- variable 'c' -->
+						<label for="variable_C" class="sr-only">Variable C</label>
 						<input
 							required
 							type="text"
-							id="variableC"
+							id="variable_C"
 							maxlength="3"
 							placeholder="c"
-							name="VariableC"
-							inputmode="decimal"
+							name="Variable-C"
 							pattern="^-?\d{1,3}$"
 							data-variable-name="c"
 							title="1-3 digit integer"
-							class="number-input js-variable-input" />
+							class="js-variable-input number-input" />
 
 						<!-- '= 0' -->
-						<math class="relative -bottom-3 flex items-center text-2xl font-semibold sm:bottom-0">
-							<mo class="sm:mx-2">=</mo>
-							<mn class="relative -bottom-0.5 sm:bottom-0">0</mn>
+						<math class="flex items-center text-xl font-semibold sm:text-2xl">
+							<mo class="px-1.5">=</mo>
+							<mn>0</mn>
 						</math>
 					</fieldset>
 
-					<!-- buttons -->
+					<!-- 'Clear inputs' and 'Calculate' buttons -->
 					<fieldset class="flex w-full items-center justify-around text-lg text-gray-100">
 						<button
-							type="button"
-							id="clearInputsButton"
-							title="clear inputs"
-							class="h-11 w-11 rounded-md bg-red-600 shadow duration-150 focus-visible:outline-red-600 support:sm:hover:bg-red-700">
+							type="reset"
+							title="Clear inputs"
+							id="clear_inputs_btn"
+							class="h-11 w-11 rounded-md bg-red-600 shadow duration-150 focus-visible:outline-red-600 sm:hover:bg-red-700">
 							<svg class="m-auto h-6 w-6 fill-none stroke-current">
 								<path
 									stroke-width="2"
@@ -152,30 +147,32 @@
 
 						<button
 							type="submit"
-							class="h-11 w-32 rounded-md bg-blue-600 shadow duration-150 focus-visible:outline-blue-600 support:sm:hover:bg-blue-700">
+							class="h-11 w-32 rounded-md bg-blue-600 shadow duration-150 focus-visible:outline-blue-600 sm:hover:bg-blue-700">
 							<span>Calculate</span>
 							<svg class="m-auto -mt-1 inline-block h-6 w-6 fill-none stroke-current">
 								<path
+									stroke-width="2"
 									stroke-linecap="round"
 									stroke-linejoin="round"
-									stroke-width="2"
 									d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
 							</svg>
 						</button>
 					</fieldset>
 
 					<output
-						id="resultBox"
-						for="variableA variableB variableC"
+						id="result_box"
+						for="variable_A variable_B variable_C"
 						class="result-box flex h-11 select-none items-center justify-center rounded-md bg-gray-100 text-center text-2xl tracking-widest shadow-[inset_0_0_5px_#111827]">
 						<math>
-							<mi>x</mi>
-							<mo>=</mo>
-							<mtext>{</mtext>
-							<mspace width="5px" />
-							<mn>?</mn>
-							<mspace width="5px" />
-							<mtext>}</mtext>
+							<mrow>
+								<mi>x</mi>
+								<mo>=</mo>
+								<mtext>{</mtext>
+								<mspace class="w-1.5" />
+								<mn>?</mn>
+								<mspace class="w-1.5" />
+								<mtext>}</mtext>
+							</mrow>
 						</math>
 					</output>
 				</form>
@@ -183,13 +180,13 @@
 		</main>
 
 		<footer class="absolute bottom-7 left-0 right-0 -space-x-2 text-center">
-			<span class="pt-0.5 text-gray-900">©</span>
+			<small class="pt-0.5 text-base text-gray-900">©</small>
 			<address class="-ml-1.5 inline-block not-italic">
 				<a
 					href="https://shayan-zamani.me"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="ml-2 rounded-md text-sm font-semibold text-blue-800 underline duration-150 visited:text-purple-800 focus-visible:outline-blue-800 focus-visible:visited:outline-purple-800 sm:text-base support:hover:text-blue-900 support:visited:hover:text-purple-900">
+					class="ml-2 rounded-md text-sm font-semibold text-blue-800 underline duration-150 visited:text-purple-800 hover:text-blue-900 visited:hover:text-purple-900 focus-visible:outline-blue-800 focus-visible:visited:outline-purple-800 sm:text-base">
 					Shayan Zamani
 				</a>
 			</address>

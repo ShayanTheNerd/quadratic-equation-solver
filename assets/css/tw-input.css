@@ -13,20 +13,17 @@
 
 @layer components {
 	.number-input {
-		@apply h-11 w-11 rounded-md bg-gray-100 text-center font-medium placeholder:text-2xl placeholder:font-bold placeholder:text-gray-500 focus:border-[3px] focus:border-gray-900 focus:outline-none;
+		@apply h-10 w-10 rounded-md bg-gray-100 text-center font-medium placeholder:text-2xl placeholder:font-bold placeholder:text-gray-500 focus:border-[3px] focus:border-gray-900 focus:outline-none sm:h-11 sm:w-11;
 	}
 
-	/* math elements in the result box */
-	.result-box :where(mo, mi, mn) {
-		@apply relative;
-	}
+	/* Math elements in the result box */
 	.result-box mo {
-		@apply top-[1px];
+		@apply relative top-px;
 	}
 	.result-box mi {
-		@apply top-[-0.5px];
+		@apply relative top-[-0.5px];
 	}
 	.result-box mn {
-		@apply top-[0.5px];
+		@apply relative top-[0.5px];
 	}
 }
