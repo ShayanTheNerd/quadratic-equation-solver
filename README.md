@@ -75,7 +75,7 @@ degit https://github.com/ShayanTheNerd/quadratic-equation-solver new-project-fol
 pnpm i
 ```
 
-<p>3. Finally, run the <code>dev</code> script to start the dev server.:</p>
+<p>3. Finally, run the <code>dev</code> script to start the dev server:</p>
 
 ```sh
 pnpm run dev
