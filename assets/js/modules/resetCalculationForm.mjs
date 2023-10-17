@@ -4,9 +4,9 @@ const emptyResultBoxMarkup = `
          <mi>x</mi>
          <mo>=</mo>
          <mtext>{</mtext>
-         <mspace class="w-1.5" />
-         <mn>?</mn>
-         <mspace class="w-1.5" />
+         <mspace />
+         <mn class="px-1.5">?</mn>
+         <mspace />
          <mtext>}</mtext>
       </mrow>
    </math>
