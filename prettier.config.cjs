@@ -12,8 +12,6 @@ module.exports = {
 	bracketSameLine: true,
 	pluginSearchDirs: false,
 	quoteProps: 'as-needed',
-	astroAllowShorthand: true,
-	vueIndentScriptAndStyle: true,
 	htmlWhitespaceSensitivity: 'css',
 	embeddedLanguageFormatting: 'auto',
 	plugins: ['prettier-plugin-tailwindcss'],
