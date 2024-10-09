@@ -1,3 +1,6 @@
+demo of frok 
+marjan 
+hi 
 <h1>Quadratic Equation Solver</h1>
 
 <p>
